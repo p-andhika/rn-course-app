@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import {
   ActivityIndicator,
   Pressable,
+  StyleSheet,
   Text,
   TextStyle,
   ViewStyle,
@@ -73,7 +74,7 @@ export default function Button({
   return (
     <Pressable
       onPress={onPress}
-      style={[
+      style={StyleSheet.flatten([
         getVariantStyle(),
         {
           borderRadius: 12,
@@ -85,7 +86,7 @@ export default function Button({
           opacity: disabled ? 0.5 : 1,
         },
         style,
-      ]}
+      ])}
       disabled={disabled || loading}
     >
       <Text
