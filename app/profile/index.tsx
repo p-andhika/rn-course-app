@@ -1,20 +1,19 @@
 import Button from "@/components/button";
 import { Link } from "expo-router";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
-export default function Index() {
+export default function Profile() {
   return (
     <View
       style={{
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        gap: 16,
       }}
     >
-      <Link href="/settings">Go to Settings</Link>
-      <Link href="/profile" asChild>
-        <Button>Go to Profile</Button>
+      <Text>Profile Screen</Text>
+      <Link dismissTo href="/" asChild>
+        <Button style={{ marginTop: 16 }}>Go back</Button>
       </Link>
     </View>
   );

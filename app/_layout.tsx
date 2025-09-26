@@ -10,6 +10,13 @@ export default function RootLayout() {
         }}
       />
       <Stack.Screen
+        name="profile"
+        options={{
+          headerShown: true,
+          title: "Profile",
+        }}
+      />
+      <Stack.Screen
         name="settings"
         options={{
           headerShown: true,
