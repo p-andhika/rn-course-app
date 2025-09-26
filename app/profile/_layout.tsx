@@ -2,7 +2,7 @@ import { Tabs } from "expo-router";
 
 export default function ProfileLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs screenOptions={{ headerShown: false, animation: "shift" }}>
       <Tabs.Screen
         name="index"
         options={{
