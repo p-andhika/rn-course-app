@@ -1,8 +1,17 @@
 import Button from "@/components/button";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { View } from "react-native";
 
 export default function Index() {
+  const router = useRouter();
+
+  function handleNavigation() {
+    router.push({
+      pathname: "/profile/[id]",
+      params: { id: 2 },
+    });
+  }
+
   return (
     <View
       style={{
@@ -16,6 +25,7 @@ export default function Index() {
       <Link href="/profile" asChild>
         <Button>Go to Profile</Button>
       </Link>
+      <Button onPress={handleNavigation}>Go to Random Profile</Button>
     </View>
   );
 }
