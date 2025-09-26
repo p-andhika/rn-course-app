@@ -1,18 +1,30 @@
 import { ThemedText } from "@/components/themed-text";
-import { useFocusEffect } from "expo-router";
-import { useCallback } from "react";
+import {
+  useFocusEffect,
+  useNavigation,
+  useNavigationContainerRef,
+} from "expo-router";
+import { useCallback, useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
-  useFocusEffect(
-    useCallback(() => {
-      console.log("Hello, I'm focused");
+  // useFocusEffect(
+  //   useCallback(() => {
+  //     console.log("Hello, I'm focused");
+  //
+  //     return () => {
+  //       console.log("This route is now unfocused");
+  //     };
+  //   }, []),
+  // );
 
-      return () => {
-        console.log("This route is now unfocused");
-      };
-    }, []),
-  );
+  // const ref = useNavigationContainerRef();
+  // useEffect(() => {
+  //   if (ref)
+  //     ref.addListener("state", (event) => {
+  //       console.log(event.data.state?.routeNames);
+  //     });
+  // }, []);
 
   return (
     <View style={styles.container}>
