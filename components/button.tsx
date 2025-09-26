@@ -32,13 +32,10 @@ export default function Button({
   style,
   textStyle,
 }: Props) {
-  const sizeStyle: Record<
-    Size,
-    { height: number; fontSize: number; padding: number }
-  > = {
-    small: { height: 36, fontSize: 14, padding: 12 },
-    medium: { height: 44, fontSize: 16, padding: 16 },
-    large: { height: 55, fontSize: 18, padding: 20 },
+  const sizeStyle: Record<Size, { fontSize: number; padding: number }> = {
+    small: { fontSize: 14, padding: 12 },
+    medium: { fontSize: 16, padding: 16 },
+    large: { fontSize: 18, padding: 20 },
   };
 
   const getVariantStyle = (): ViewStyle => {
