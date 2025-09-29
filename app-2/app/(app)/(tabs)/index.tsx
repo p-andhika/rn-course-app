@@ -1,6 +1,7 @@
 import { ThemedText } from "@/components/themed-text";
 import { useAuth } from "@/context/auth";
 import {
+  Link,
   useFocusEffect,
   useNavigation,
   useNavigationContainerRef,
@@ -33,6 +34,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <ThemedText type="title">Home</ThemedText>
+      <Link href="/(app)/deeplink">Go to Deeplink</Link>
       <Button title="Sign out" color="red" onPress={() => setUser(undefined)} />
     </View>
   );

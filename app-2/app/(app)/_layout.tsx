@@ -2,6 +2,10 @@ import { useAuth } from "@/context/auth";
 import { Redirect, Stack } from "expo-router";
 import "react-native-reanimated";
 
+export const unstable_settings = {
+  initialRouteName: "(tabs)",
+};
+
 export default function AppLayout() {
   const { user } = useAuth();
 
@@ -11,7 +15,18 @@ export default function AppLayout() {
 
   return (
     <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="(tabs)"
+        options={{ headerShown: false, title: "Home" }}
+      />
+      <Stack.Screen
+        name="deeplink"
+        options={{
+          headerShown: true,
+          presentation: "modal",
+          title: "Deep Link",
+        }}
+      />
     </Stack>
   );
 }
