@@ -7,9 +7,16 @@ import {
   useState,
 } from "react";
 
+export enum UserRole {
+  Admin = "admin",
+  User = "user",
+  Guest = "guest",
+}
+
 type User = {
   name: string;
   email: string;
+  role: UserRole;
 };
 
 type AuthContextType = {
@@ -27,7 +34,7 @@ export const AuthContextProvider = ({ children }: Props) => {
   const [user, setUser] = useState<User | undefined>(undefined);
 
   useEffect(() => {
-    setUser({ name: "Dhika", email: "dhika@gmail.com" });
+    setUser({ name: "Dhika", email: "dhika@gmail.com", role: UserRole.Guest });
   }, []);
 
   return (
