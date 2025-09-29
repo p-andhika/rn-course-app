@@ -1,4 +1,5 @@
 import { ThemedText } from "@/components/themed-text";
+import { useAuth } from "@/context/auth";
 import {
   useFocusEffect,
   useNavigation,
@@ -6,7 +7,7 @@ import {
   useRouter,
 } from "expo-router";
 import { useCallback, useEffect } from "react";
-import { StyleSheet, View } from "react-native";
+import { Button, StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
   // useFocusEffect(
@@ -27,9 +28,12 @@ export default function HomeScreen() {
   //     });
   // }, []);
 
+  const { setUser } = useAuth();
+
   return (
     <View style={styles.container}>
       <ThemedText type="title">Home</ThemedText>
+      <Button title="Sign out" color="red" onPress={() => setUser(undefined)} />
     </View>
   );
 }
