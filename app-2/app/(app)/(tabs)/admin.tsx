@@ -1,6 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import { useAuth, UserRole } from "@/context/auth";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function AdminScreen() {
   const { user } = useAuth();
